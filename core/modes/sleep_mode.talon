@@ -36,3 +36,6 @@ settings():
     user.talon_mode()
 
 ^(talon wake)+$: speech.enable()
+
+parrot(click):
+    user.talon_mode()
