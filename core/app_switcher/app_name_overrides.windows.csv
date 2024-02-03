@@ -6,3 +6,5 @@ app, slack.exe
 lockapp, slack.exe
 pycharm, pycharm64.exe
 webstorm, webstorm64.exe
+bash, MSYS2 terminal
+studio, Microsoft Visual Studio 2019

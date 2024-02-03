@@ -7,6 +7,7 @@ touch:
     mouse_click(0)
     # close the mouse grid if open
     user.grid_close()
+    user.flex_grid_deactivate()
     # End any open drags
     # Touch automatically ends left drags so this is for right drags specifically
     user.mouse_drag_end()
@@ -15,11 +16,13 @@ righty:
     mouse_click(1)
     # close the mouse grid if open
     user.grid_close()
+    user.flex_grid_deactivate()
 
 mid click:
     mouse_click(2)
     # close the mouse grid
     user.grid_close()
+    user.flex_grid_deactivate()
 
 #see keys.py for modifiers.
 #defaults
