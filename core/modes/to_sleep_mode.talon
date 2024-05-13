@@ -22,5 +22,8 @@ mode: dictation
     user.mouse_sleep()
     speech.disable()
     user.engine_sleep()
+    mode.disable("noise")
 
-^talon sleep [<phrase>]$: speech.disable()
+^talon sleep [<phrase>]$:
+    speech.disable()
+    mode.disable("noise")
