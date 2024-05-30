@@ -19,3 +19,14 @@ copy paste:
     edit.copy()
     sleep(50ms)
     edit.paste()
+
+# non-community custom
+term edit:
+    key('ctrl-x')
+    key('ctrl-e')
+
+term next:
+    key('ctrl-right')
+
+term complete:
+    key('right')
