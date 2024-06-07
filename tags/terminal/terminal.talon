@@ -21,6 +21,18 @@ copy paste:
     edit.paste()
 
 # non-community custom
+copy:
+    "cp "
+
+move:
+    "mv "
+
+home:
+    "~/"
+
+here:
+    " . "
+
 term edit:
     key('ctrl-x')
     key('ctrl-e')
@@ -30,3 +42,6 @@ term next:
 
 term complete:
     key('right')
+
+term cancel:
+    key('ctrl-c')

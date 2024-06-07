@@ -6,11 +6,12 @@ not mode: sleep
     mode.enable("dictation")
     user.code_clear_language_mode()
     user.gdb_disable()
+
 ^command mode$:
     mode.disable("sleep")
     mode.disable("dictation")
     mode.enable("command")
-    mode.disable("noise")
+    #mode.disable("noise")
 
 ^mixed mode$:
     mode.disable("sleep")

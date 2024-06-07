@@ -377,6 +377,8 @@ class Actions:
         """Open a menu of running apps to switch to"""
         if app.platform == "windows":
             actions.key("alt-ctrl-tab")
+        if app.platform == "linux":
+            actions.key("super")
         else:
             print("Persistent Switcher Menu not supported on " + app.platform)
 
