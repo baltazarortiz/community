@@ -19,29 +19,3 @@ copy paste:
     edit.copy()
     sleep(50ms)
     edit.paste()
-
-# non-community custom
-copy:
-    "cp "
-
-move:
-    "mv "
-
-home:
-    "~/"
-
-here:
-    " . "
-
-term edit:
-    key('ctrl-x')
-    key('ctrl-e')
-
-term next:
-    key('ctrl-right')
-
-term complete:
-    key('right')
-
-term cancel:
-    key('ctrl-c')
