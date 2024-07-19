@@ -29,6 +29,7 @@ class TmuxActions:
     def tmux_enter_command(command: str = ""):
         """Enter tmux command mode and optionally insert a command without executing it."""
         actions.user.tmux_keybind(":")
+        actions.sleep("40ms")
         actions.insert(command)
 
     def tmux_execute_command(command: str):
@@ -52,13 +53,16 @@ ctx.matches = "app: tmux"
 @ctx.action_class("app")
 class AppActions:
     def tab_open():
-        actions.user.tmux_execute_command("new-window")
+        actions.user.tmux_keybind("c")
+        #actions.user.tmux_execute_command("new-window")
 
     def tab_next():
-        actions.user.tmux_execute_command("select-window -n")
+        actions.user.tmux_keybind("n")
+        #actions.user.tmux_execute_command("select-window -n")
 
     def tab_previous():
-        actions.user.tmux_execute_command("select-window -p")
+        actions.user.tmux_keybind("p")
+        #actions.user.tmux_execute_command("select-window -p")
 
 
 @ctx.action_class("user")
@@ -83,34 +87,40 @@ class UserActions:
 
     def split_window_down():
         actions.user.split_window_vertically()
-        actions.user.tmux_execute_command("swap-pane -U -s #P")
 
     def split_window_up():
         actions.user.split_window_vertically()
+        actions.user.tmux_execute_command("swap-pane -U -s #P")
 
     def split_flip():
-        actions.user.tmux_execute_command("next-layout")
+        #actions.user.tmux_execute_command("next-layout")
+        actions.user.tmux_keybind("space")
 
     def split_window_vertically():
-        actions.user.tmux_execute_command("split-pane")
+        #actions.user.tmux_execute_command("split-pane")
+        actions.user.tmux_keybind("\"")
 
     def split_window_horizontally():
-        actions.user.tmux_execute_command("split-pane -h")
+        actions.user.tmux_keybind("|")
+        #actions.user.tmux_execute_command("split-pane -h")
 
     def split_maximize():
         # toggle the maximization because zooming when already zoomed is pointless
-        actions.user.tmux_execute_command("resize-pane -Z")
+        # actions.user.tmux_execute_command("resize-pane -Z")
+        actions.user.tmux_keybind("z")
 
     def split_reset():
-        actions.user.tmux_execute_command("resize-pane -Z")
+        # actions.user.tmux_execute_command("resize-pane -Z")
+        actions.user.tmux_keybind("z")
 
     def split_window():
         actions.user.split_window_horizontally()
 
     def split_clear():
-        actions.user.tmux_execute_command_with_confirmation(
-            "kill-pane", "kill-pane #P?"
-        )
+        #actions.user.tmux_execute_command_with_confirmation(
+        #    "kill-pane", "kill-pane #P?"
+        #)
+        actions.user.tmux_keybind("x")
 
     def split_next():
         # select-pane doesn't seem to support the prefix-o behavior
